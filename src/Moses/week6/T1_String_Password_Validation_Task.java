@@ -5,10 +5,7 @@ import java.util.Scanner;
 public class T1_String_Password_Validation_Task {
 
     public static void main(String[] args) {
-        int numUpperCaseLetters = 1;
-        int numLowerCaseLetters = 1;
-        int numSpecialCharacter = 1;
-        int numDigit = 1;
+
         // Declare some variables
         int upperNumber = 0;
         int lowerNumber = 0;
@@ -26,28 +23,32 @@ public class T1_String_Password_Validation_Task {
             // To get one letter at a time starting from index 0 and also will be length - 1
             char ch = input.charAt(i);
             // Check if it meets this conditions and if it is greater or equal to otherwise password is invalid
-            if (Character.isUpperCase(ch))
+            if (Character.isUpperCase(ch)) {
                 upperNumber++;
-            else if (Character.isLowerCase(ch))
+            } else if (Character.isLowerCase(ch)) {
                 lowerNumber++;
-            else if (Character.isDigit(ch))
+            } else if (Character.isDigit(ch)) {
                 digitNumber++;
+            } else if(!Character.isLetterOrDigit(ch)) {
+                specialDigit++;
+            }
+
 
         }
-        if (upperNumber >= numUpperCaseLetters && lowerNumber >= numLowerCaseLetters && digitNumber >= digitNumber) ;
-        System.out.println("Valid Password");
-/*
-        else {
+        if (upperNumber >= 1 && lowerNumber >= 1 && digitNumber >= 1) {
+            System.out.println("Valid Password");
+
+        } else {
             System.out.println("The password is invalid");
-            if (upperNumber < numUpperCaseLetters)
+            if (upperNumber < 1)
                 System.out.println("Not enough upper case Letters");
-            if (lowerNumber < numLowerCaseLetters) ;
+            if (lowerNumber < 1) ;
             System.out.println("Not enough lower case letters");
-            if (digitNumber < digitNumber) ;
+            if (digitNumber < 1) ;
             System.out.println("Not enough digits");
 
         }
-*/
+
 
     }
 }
